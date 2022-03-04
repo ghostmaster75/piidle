@@ -18,6 +18,7 @@ Can be use as system service.
 
 <a href="https://suckless.org/">suckless-tools</a> package is needed
 You can install it by command:
+
 <code>sudo apt install suckless-tools</code>
 
 <h3>Installation</h3>
