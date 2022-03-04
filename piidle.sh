@@ -6,7 +6,7 @@ GREEN='\e[0;32m'
 DGRAY='\e[0;30m'
 BLUE='\e[1;34m'
 IDLE=30
-BMIN=20
+BMIN=15
 BMAX=255
 triggered=false
 
@@ -16,8 +16,14 @@ usage() {
 	printf '\n-i, --idle\t\tIdle Time in seconds. Default value is 30 secods'
 	printf '\n-bmin, --brightness-max\tMinimun value of brightness.\n\t\t\tValid value are from 0 to 255'
 	printf '\n-bmin, --brightness-max\tMaximun value of brightness.\n\t\t\tValid value are from 0 to 255'
+	printf '\n-r, --reset\t\tReset birghtness to 255'
 	printf '\n-h, --help\t\tthis help'
 	printf '\n\n'
+}
+
+reset() {
+	printf 'Reset brightness\n'
+	eval $(sudo sh -c 'echo 255 > /sys/class/backlight/10-0045/brightness')
 }
 
 while true; do
@@ -34,6 +40,9 @@ while true; do
     -h|--help)
       usage
       exit 0;;
+     -r|--reset)
+	reset
+	exit 0;;
     --)
       break;;
      *)
@@ -82,7 +91,7 @@ then
 	exit 1
 fi
 
-printf "PIIDLE : IDLE: %s - BMIN: %s - BMAX: %s\n" "$IDLE" "$BMIN" "$BMAX"
+printf "PIIDLE : IDLE: %s - BMIN: %s - BMAX: %s" "$IDLE" "$BMIN" "$BMAX"
 
 timeout=$(($IDLE*1000))
 
