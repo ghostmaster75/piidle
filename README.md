@@ -31,7 +31,7 @@ give execution permission with
 Next, copy the service file piidle.service the under /lib/systemd/system/ directory to create service file for the systemd on your system.
 Let’s reload the systemctl daemon to read new file. You need to reload this deamon each time after making any changes in in .service file.
 
-sudo systemctl daemon-reload
+<code>sudo systemctl daemon-reload</code>
 
 Now enable the service to start on system boot, also start the service using the following commands.
 
