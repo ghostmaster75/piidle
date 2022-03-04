@@ -8,7 +8,7 @@ If input key or mouse movement are detectet bring up the brightness to a specifi
 Can be use as system service.
 
 <H1>Usage</H1>
-![Help](/assets/images/piidle-help.png?raw=true "Help")
+![Help](piidle-help.svg)
 
 
 <H1>Install</H1>
