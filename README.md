@@ -13,6 +13,15 @@ Can be use as system service.
 
 
 <H1>Install</H1>
+
+<h3>Prerequisite</h3>
+
+<a href="https://suckless.org/">suckless-tools</a> package is needed
+You can install it by command:
+<code>sudo apt install suckless-tools</code>
+
+<h3>Installation</h3>
+
 copy piidle.sh in /usr/bin/ directory
 give execution permission with 
 
