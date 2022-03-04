@@ -6,5 +6,7 @@ User=pi
 Environment=DISPLAY=:0
 ExecStart=/usr/bin/piidle.sh
 
+ExecStop=/usr/bin/piidle.sh --reset
+
 [Install]
 WantedBy=multi-user.target
