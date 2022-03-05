@@ -5,6 +5,10 @@ Change Brightness of official Rasperry PI LCD 7" if system are in idle after a p
 Use <a href="http://manpages.ubuntu.com/manpages/bionic/man1/xssstate.1.html">xssstate</a> to check if system are in idle (no keyboard or mouse input) and after a predefinited period of time down the brightness of screen to a specific level.
 If input key or mouse movement are detectet bring up the brightness to a specific level.
 
+
+![Simulation](/docs/assets/images/sim.gif)
+
+
 Can be use as system service.
 
 <H1>Usage</H1>
