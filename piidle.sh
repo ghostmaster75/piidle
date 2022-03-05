@@ -26,6 +26,16 @@ reset() {
 	eval $(sudo sh -c 'echo 255 > /sys/class/backlight/10-0045/brightness')
 }
 
+prerequisite() {
+        REQUIRED_PKG="suckless-tools"
+        PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $REQUIRED_PKG|grep "install ok installed")
+        echo Checking for $REQUIRED_PKG: $PKG_OK
+        if [ "" = "$PKG_OK" ]; then
+                echo "No $REQUIRED_PKG. Please install with: 'sudo apt install $REQUIRED_PKG' "
+                exit 1
+        fi
+}
+
 while true; do
   case "$1" in
     -bmin|--brightness-min)
@@ -49,6 +59,8 @@ while true; do
       break;;
   esac
 done
+
+prerequisite
 
 if ! [ "$IDLE" -eq "$IDLE" ] 2>/dev/null
 then
