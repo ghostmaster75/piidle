@@ -6,7 +6,7 @@ Use <a href="http://manpages.ubuntu.com/manpages/bionic/man1/xssstate.1.html">xs
 If input key or mouse movement are detectet bring up the brightness to a specific level.
 
 
-![Simulation](/docs/assets/images/sim.gif)
+![Simulation](/docs/assets/images/simd.gif)
 
 
 Can be use as system service.
