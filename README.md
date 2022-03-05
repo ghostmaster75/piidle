@@ -13,7 +13,7 @@ Can be use as system service.
 
 <H1>Usage</H1>
 
-![Help Image](/docs/assets/images/piidle-help.png)
+![Help Image](/docs/assets/images/help.png)
 
 
 <H1>Install</H1>
