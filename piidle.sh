@@ -113,19 +113,28 @@ do
     brightness=$(cat /sys/class/backlight/10-0045/brightness)
     if [ $tosleep -le 0 ];
     then
-	while [ $brightness -ge $BMIN ]; do
-	   $triggered || eval $(sudo sh -c 'echo '"$brightness"' > /sys/class/backlight/10-0045/brightness')
-           brightness=$(($brightness-2))
-	done
-	$triggered || eval $(sudo sh -c 'echo '"$BMIN"' > /sys/class/backlight/10-0045/brightness')
-	triggered=true
+        while [ $brightness -ge $BMIN ]; do
+           tosleep=$(((timeout - $(xssstate -i)) / 1000))
+           if [ $tosleep -gt 0 ]
+           then
+                break
+           fi
+           $triggered || eval $(sudo sh -c 'echo '"$brightness"' > /sys/class/backlight/10-0045/brightness')
+           brightness=$(($brightness-3))
+        done
+        tosleep=$(((timeout - $(xssstate -i)) / 1000))
+        if [ $tosleep -le 0 ]
+        then
+                $triggered || eval $(sudo sh -c 'echo '"$BMIN"' > /sys/class/backlight/10-0045/brightness')
+        fi
+        triggered=true
     else
         triggered=false
         while [ $brightness -le $BMAX ]; do
-		$triggered || eval $(sudo sh -c 'echo '"$brightness"' > /sys/class/backlight/10-0045/brightness')
-		brightness=$(($brightness+2))
-	done
-	$triggered || eval $(sudo sh -c 'echo '"$BMAX"' > /sys/class/backlight/10-0045/brightness')
+                $triggered || eval $(sudo sh -c 'echo '"$brightness"' > /sys/class/backlight/10-0045/brightness')
+                brightness=$(($brightness+3))
+        done
+        $triggered || eval $(sudo sh -c 'echo '"$BMAX"' > /sys/class/backlight/10-0045/brightness')
         sleep $tosleep
     fi
 done
