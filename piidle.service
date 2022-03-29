@@ -1,12 +1,14 @@
 [Unit]
 Description=Idle Rasperry official LCD Brightness
+After=multi-user.target
 
 [Service]
 User=pi
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/piidle.sh
+ExecStart=/usr/bin/piidle
+Type=idle
 
-ExecStop=/usr/bin/piidle.sh --reset
+ExecStop=/usr/bin/piidle --reset
 
 [Install]
 WantedBy=multi-user.target
