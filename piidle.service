@@ -5,10 +5,10 @@ After=multi-user.target
 [Service]
 User=pi
 Environment=DISPLAY=:0
-ExecStart=/usr/bin/piidle
+ExecStart=/usr/bin/piidle.sh
 Type=idle
 
-ExecStop=/usr/bin/piidle --reset
+ExecStop=/usr/bin/piidle.sh --reset
 
 [Install]
 WantedBy=multi-user.target
