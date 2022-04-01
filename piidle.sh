@@ -30,7 +30,7 @@ usage() {
 
 reset() {
         printf 'Reset brightness\n'
-        eval $(sudo sh -c 'echo 255 > "$BPATH"')
+        eval $(sudo sh -c 'echo 255 > '"$BPATH")
 }
 
 prerequisite() {
