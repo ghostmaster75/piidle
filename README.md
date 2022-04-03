@@ -32,7 +32,7 @@ give execution permission with
 
 <code>sudo chmod +x /usr/bin/piidle.sh</code>
 
-Next, copy the service file piidle.service the under /lib/systemd/system/ directory to create service file for the systemd on your system.
+Next, copy the service file <code>piidle.service</code> the under <code>/lib/systemd/system/</code> directory to create service file for the systemd on your system.
 Let’s reload the systemctl daemon to read new file. You need to reload this deamon each time after making any changes in in .service file.
 
 <code>sudo systemctl daemon-reload</code>
