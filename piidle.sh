@@ -13,10 +13,10 @@ FADEIN=true
 FADEOUT=true
 
 #FOR RASPBIAN BULLEYE
-#BPATH='/sys/class/backlight/10-0045/brightness'
+BPATH='/sys/class/backlight/10-0045/brightness'
 
 #FOR RASPBIAN BUSTER
-BPATH='/sys/class/backlight/rpi_backlight/brightness'
+#BPATH='/sys/class/backlight/rpi_backlight/brightness'
 
 
 usage() {
