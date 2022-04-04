@@ -46,4 +46,3 @@ Now enable the service to start on system boot, also start the service using the
 Finally verify the script is up and running as a systemd service.
 
 <code>sudo systemctl status piidle.service</code>
-
