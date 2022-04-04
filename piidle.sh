@@ -28,7 +28,7 @@ usage() {
 	printf '\n-nfi, --no-fade-in\tDisable fade effect on idle'
 	printf '\n-nfo, --no-fade-out\tDisable fade on resume'
 	printf '\n-nf, --no-fade\t\tDisable fade effect'
-	printf '\n-r, --reset\t\tReset birghtness to 255'
+	printf '\n-r, --reset\t\tReset brightness to 255'
 	printf '\n-h, --help\t\tthis help'
 	printf '\n\n'
 }
